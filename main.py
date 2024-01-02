@@ -5,10 +5,9 @@ app = Flask(__name__)
 def home():
     return 'Welcome to the home page'
 
-@app.route('/user/<username>')
+@app.route('/user/<string:username>')
 def user_profile(username):
-    if 'user' in session:
-        return f'User profile for {username}'
+    return "Welcome " + username
 
 # Group of admin-related routes
 @app.route('/admin')
